@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-app
+    ports:
+      - "80:80"  # внешний:внутренний
+    restart: always
+    environment:
+      - ENV=production
+    # volumes:
+    #   - ./app:/app  # если нужно монтировать код
